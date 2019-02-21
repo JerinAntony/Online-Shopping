@@ -1,10 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+
 <meta charset="ISO-8859-1">
 <title>Login</title>
-</head>
 <style>
+.display{
+position:absolute;
+top: 37%;
+left:22%;}
+
+
 body {
 	text-align: center;
 	padding-top: 230px;
@@ -14,28 +21,35 @@ form {
 	display: inline-block;
 }
 </style>
-<body bgcolor="grey">
+</head>
+<body bgcolor="white">
 	<form method="post" action="Login">
+	<div class="display">
+		<img src="online.jpg" alt="hh" width="150px" height="150px">
+		
+		</div>
 		<table>
 			<tbody>
 				<tr align="center">
-					<td style="color: white" colspan="2">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Flipkart
-						2.o</td>
+					<td style="color: black" colspan="2" style="padding-top:50px">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Flipkart
+						2.o </td>
 					<td></td>
 				</tr>
+		
+					
 				<tr>
-					<td></td>
-				</tr>
-				<tr>
-					<td style="color: white">Phone no :</td>
+				
+				
+					<td style="color: black">Phone no :</td>
 					<td><input type="number" name="phone" required></td>
+					
 				</tr>
 				<tr>
 					<td>&nbsp;</td>
 				</tr>
 
-				<tr>
-					<td style="color: white">Password :</td>
+				<tr>	
+					<td style="color: black">Password :</td>
 					<td><input type="password" name="password" required></td>
 				</tr>
 				<tr>
@@ -55,6 +69,7 @@ form {
 
 			</tbody>
 		</table>
+
 	</form>
 </body>
 </html>
