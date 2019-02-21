@@ -57,7 +57,7 @@ form {
 							<td><input type="Text" name="expiration_date" required></td>
 						</tr>
 						<tr>
-							<td>&nbsp</td>
+							<td>&nbsp;</td>
 						</tr>
 						<tr>
 							<td></td>
@@ -73,7 +73,7 @@ form {
 							<td><input type="Text" name="category" required></td>
 						</tr>
 						<tr>
-							<td>&nbsp</td>
+							<td>&nbsp;</td>
 						</tr>
 						<tr>
 							<td></td>
