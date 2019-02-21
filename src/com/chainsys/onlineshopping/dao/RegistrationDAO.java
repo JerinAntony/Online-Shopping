@@ -28,5 +28,20 @@ public class RegistrationDAO {
 			e.printStackTrace();
 		}
 	}
-	
+
+	public void changePassword(Registration register) throws Exception {
+		try {
+			Connection connection = ConnectionUtil.getConnection();
+			String sql = "UPDATE registeration SET password=? WHERE phone_number=? and password=?";
+			PreparedStatement preparedstatement = connection
+					.prepareStatement(sql);
+			preparedstatement.setString(1, register.getPassword());
+			preparedstatement.setLong(2, register.getPhoneNumber());
+			preparedstatement.setString(3, register.getPassword());
+			preparedstatement.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
 }
