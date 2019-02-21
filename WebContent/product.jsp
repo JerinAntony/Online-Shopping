@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -28,29 +29,30 @@ form {
 	<table>
 		<tr>
 			<td><form>
-					<table >
-
-						Category
-						<select name="category">
-							<c:forEach var="category" items="${CATEGORY}">
-								<option value="${category.id }">${category.name }</option>
-							</c:forEach>
-						</select>
+					<table>
+						<tr>
+							<td>Category</td>
+							<td><select name="category">
+									<c:forEach var="category" items="${CATEGORY}">
+										<option value="${category.id }">${category.name }</option>
+									</c:forEach>
+							</select></td>
+						</tr>
 						<tr>
 							<td>Product :</td>
-							<td><input type="Text" name="product" required></td>
+							<td><input type="Text" name="product" ></td>
 						</tr>
 						<tr>
 							<td>Description :</td>
-							<td><input type="Text" name="description" required></td>
+							<td><input type="Text" name="description" ></td>
 						</tr>
 						<tr>
 							<td>Quantity :</td>
-							<td><input type="Text" name="quantity" required></td>
+							<td><input type="Text" name="quantity" ></td>
 						</tr>
 						<tr>
 							<td>Price :</td>
-							<td><input type="Text" name="price" required></td>
+							<td><input type="Text" name="price" ></td>
 						</tr>
 						<tr>
 							<td>Expiration Date :</td>
