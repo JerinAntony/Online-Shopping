@@ -28,4 +28,5 @@ public class RegistrationDAO {
 			e.printStackTrace();
 		}
 	}
+	
 }
