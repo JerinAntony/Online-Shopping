@@ -1,15 +1,15 @@
 package com.chainsys.onlineshopping.model;
 
+import java.sql.Timestamp;
 import java.time.LocalDate;
 
-import com.sun.jmx.snmp.Timestamp;
 
 public class Registration {
 	private int id;
 	private	String username;
 	private String email;
 	private String password;
-	private int phoneNumber;
+	private long phoneNumber;
 	private LocalDate dateOfBirth;
 	private Timestamp createdDate;
 	
@@ -37,10 +37,10 @@ public class Registration {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public int getPhoneNumber() {
+	public long getPhoneNumber() {
 		return phoneNumber;
 	}
-	public void setPhoneNumber(int phoneNumber) {
+	public void setPhoneNumber(long phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 	public LocalDate getDateOfBirth() {
