@@ -22,27 +22,20 @@ public class ConnectionUtil {
 		return connection;
 	}
 
-	public static void close(Connection conn,PreparedStatement pstmt,ResultSet rs)
-	{
-		try
-		{
-			if(rs!=null)
-			{
+	public static void close(Connection conn, PreparedStatement pstmt,
+			ResultSet rs) {
+		try {
+			if (rs != null) {
 				rs.close();
 			}
-			if(pstmt!=null)
-			{
+			if (pstmt != null) {
 				pstmt.close();
 			}
-			if(conn!=null)
-			{
+			if (conn != null) {
 				conn.close();
 			}
-		
-	}
-		catch(SQLException e)
-		{
-		
+		} catch (SQLException e) {
+			e.printStackTrace();
 		}
-}
+	}
 }
