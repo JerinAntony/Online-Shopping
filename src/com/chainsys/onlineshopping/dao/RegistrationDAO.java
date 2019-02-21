@@ -29,13 +29,13 @@ public class RegistrationDAO {
 		}
 	}
 
-	public void changePassword(Registration register) throws Exception {
+	public void changePassword(Registration register,String newpassword) throws Exception {
 		try {
 			Connection connection = ConnectionUtil.getConnection();
 			String sql = "UPDATE registeration SET password=? WHERE phone_number=? and password=?";
 			PreparedStatement preparedstatement = connection
 					.prepareStatement(sql);
-			preparedstatement.setString(1, register.getPassword());
+			preparedstatement.setString(1, newpassword);
 			preparedstatement.setLong(2, register.getPhoneNumber());
 			preparedstatement.setString(3, register.getPassword());
 			preparedstatement.executeUpdate();
