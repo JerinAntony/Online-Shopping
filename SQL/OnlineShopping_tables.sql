@@ -37,6 +37,11 @@ CREATE TABLE category
 (id NUMBER(10) CONSTRAINT pk_category_id PRIMARY KEY,
 name VARCHAR2(20) not null);
 
+CREATE SEQUENCE category_id_seq 
+START WITH 1
+INCREMENT BY 1;
+
+
 
 CREATE TABLE orders
 (
