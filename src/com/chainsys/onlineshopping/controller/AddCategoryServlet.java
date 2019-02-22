@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -33,9 +34,11 @@ public class AddCategoryServlet extends HttpServlet {
 		CategoryDAO categorydao = new CategoryDAO();
 		try {
 			ArrayList<Category> categorylist = new ArrayList<>();
+			categorydao.addCategory(category);
 			categorylist.addAll(categorydao.findAll());
 			request.setAttribute("CATEGORY", category);
-			categorydao.addCategory(category);
+			RequestDispatcher rd = request.getRequestDispatcher("home.jsp");
+			rd.forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
