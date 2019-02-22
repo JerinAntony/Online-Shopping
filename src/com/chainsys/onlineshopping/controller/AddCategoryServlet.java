@@ -43,7 +43,7 @@ public class AddCategoryServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String name = request.getParameter("category");
+		String name = request.getParameter("categoryName");
 		Category category = new Category();
 		category.setName(name);
 		CategoryDAO categorydao = new CategoryDAO();

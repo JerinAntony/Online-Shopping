@@ -34,13 +34,13 @@ form {
 
 
 
-				<form method="post" action="SeaechByIdServlet">
+				<form method="post" action="AddCategoryServlet">
 
 						<h2 style="color: white;">Add Category</h2>
 						<table>
 							<tr>
 								<td style="color: white;">Name :</td>
-								<td><input type="text" name="categoryId"></td>
+								<td><input type="text" name="categoryName"></td>
 							</tr>
 
 							<tr>
