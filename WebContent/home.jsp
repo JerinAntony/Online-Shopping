@@ -110,7 +110,15 @@ form {
 							</tr>
 							<tr>
 								<td style="color: white;">Expiration Date :</td>
-								<td><input type="Text" name="expiration_date"></td>
+								<td><input type="date" name="expiration_date"></td>
+							</tr>
+							<tr>
+							<td style="color: white;">
+							Status :</td>
+							<td>
+							<input type="radio" name ="status" value="available" checked>Available
+							<input type="radio" name ="status" value="not_available" checked>Not Available
+							</td>
 							</tr>
 							<!-- <tr>
 								<td style="color: white;">Author</td>
