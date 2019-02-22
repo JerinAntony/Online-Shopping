@@ -65,7 +65,7 @@ form {
 			<td>
 				<div align="center" style="width: 600px">
 
-					<form method="post" action="SaveServlet">
+					<form method="post" action="AddProductServlet">
 
 						<h2 style="color: white;">Add Product</h2>
 						<table>
