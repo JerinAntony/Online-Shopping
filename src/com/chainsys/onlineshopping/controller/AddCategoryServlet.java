@@ -2,6 +2,7 @@ package com.chainsys.onlineshopping.controller;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,34 +21,20 @@ public class AddCategoryServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
-	 * @see HttpServlet#HttpServlet()
-	 */
-	public AddCategoryServlet() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
-	 *      response)
-	 */
-	protected void doGet(HttpServletRequest request,
-			HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-	}
-
-	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
 	 *      response)
 	 */
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String name = request.getParameter("categoryName");
+		String name = request.getParameter("category");
 		Category category = new Category();
 		category.setName(name);
 		CategoryDAO categorydao = new CategoryDAO();
 		try {
+			ArrayList<Category> categorylist = new ArrayList<>();
+			categorylist.addAll(categorydao.findAll());
+			request.setAttribute("CATEGORY", category);
 			categorydao.addCategory(category);
 		} catch (Exception e) {
 			e.printStackTrace();
