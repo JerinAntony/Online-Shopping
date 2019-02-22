@@ -1,6 +1,8 @@
 package com.chainsys.onlineshopping.controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -8,7 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.chainsys.onlineshopping.dao.CategoryDAO;
 import com.chainsys.onlineshopping.dao.RegistrationDAO;
+import com.chainsys.onlineshopping.model.Category;
 import com.chainsys.onlineshopping.model.Registration;
 
 /**
@@ -28,8 +32,12 @@ public class LoginServelt extends HttpServlet {
 		System.out.println(register.getPhoneNumber());
 		System.out.println(register.getPassword());
 		RegistrationDAO registrationDAO = new RegistrationDAO();
+		CategoryDAO categoryDAO = new CategoryDAO();
+		ArrayList<Category> categorylist = new ArrayList<>();
 		try {
 			registrationDAO.checkLogin(register);
+			categorylist.addAll(categoryDAO.findAll());
+			request.setAttribute("CATEGORY", categorylist);
 			RequestDispatcher req = request.getRequestDispatcher("home.jsp");
 			req.forward(request, response);
 		} catch (Exception e) {

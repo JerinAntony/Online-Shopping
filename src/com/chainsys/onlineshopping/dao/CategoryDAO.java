@@ -44,4 +44,24 @@ public class CategoryDAO {
 		}
 		return categoryLists;
 	}
+
+	public Category findById(int categoryid) {
+		Category category = new Category();
+		try {
+			Connection connection = ConnectionUtil.getConnection();
+			String sql = "SELECT id,name FROM category where id=?";
+			PreparedStatement preparedStatement = connection
+					.prepareStatement(sql);
+			preparedStatement.setInt(1, categoryid);
+			ResultSet resultset = preparedStatement.executeQuery();
+
+			if (resultset.next()) {
+				category.setId(resultset.getInt("id"));
+				category.setName(resultset.getString("name"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return category;
+	}
 }

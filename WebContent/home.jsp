@@ -18,23 +18,23 @@ form {
 	display: inline-block;
 }
 </style>
-<body style="color:white ;font-family:Times New Roman;font-size:19px">
-	
+<body
+	style="color: white; font-family: Times New Roman; font-size: 19px">
+
 	<div align="left" style="width: 600px; color: white;">
-	Your sucessfully logged in
-	<a href="login.html">Logout</a>
+		Your sucessfully logged in <a href="login.html">Logout</a>
 	</div>
 	<table>
-	
-	
-	
+
+
+
 		<tr>
 			<td>
 				<div align="center" style="width: 600px">
 
 
 
-				<form method="post" action="AddCategoryServlet">
+					<form method="post" action="AddCategoryServlet">
 
 						<h2 style="color: white;">Add Category</h2>
 						<table>
@@ -56,10 +56,10 @@ form {
 						</table>
 
 					</form>
-					
-					
-					
-					
+
+
+
+
 				</div>
 			</td>
 			<td>
@@ -113,12 +113,10 @@ form {
 								<td><input type="date" name="expiration_date"></td>
 							</tr>
 							<tr>
-							<td style="color: white;">
-							Status :</td>
-							<td>
-							<input type="radio" name ="status" value="available" checked>Available
-							<input type="radio" name ="status" value="not_available" checked>Not Available
-							</td>
+								<td style="color: white;">Status :</td>
+								<td><input type="radio" name="status" value="available"
+									checked>Available <input type="radio" name="status"
+									value="not_available" checked>Not Available</td>
 							</tr>
 							<!-- <tr>
 								<td style="color: white;">Author</td>
@@ -141,104 +139,19 @@ form {
 						</table>
 
 					</form>
-					
-					
-					
-					
-				</div>
-			</td>
-		</tr>
-		
-		
-		
-		
-		
-		<tr height="40px"></tr>
-		<tr align="center">
-			<td>
-				<div align="center" style="width: 600px">
-					<form method="post" action="UpdateServlet">
 
-						<h2 style="color: white;">Update Product</h2>
-						<table>
-							<tr>
-								<td style="color: white;">Product Id :</td>
-								<td><input type="number" name="bookid"></td>
-							</tr>
-							<tr>
-								<td></td>
-							</tr>
-							<tr>
-								<td style="color: white;">Name :</td>
-								<td><input type="text" name="name" required></td>
-							</tr>
-							<tr>
-								<td></td>
-							</tr>
-							<tr>
-								<td style="color: white;">Price :</td>
-								<td><input type="number" name="price"></td>
-							</tr>
-							<tr>
-								<td></td>
-							</tr>
 
-							<tr>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td></td>
-								<td>
-									<button style="width: 100px;" type="submit">Update</button>
-								</td>
-							</tr>
-						</table>
 
-					</form>
-					
-					
-					
-					
-					
-					
-				</div>
-			</td>
-			<td>
-				<div align="center" style="width: 600px">
 
-					<form method="post" action="DeleteServlet">
-
-						<h2 style="color: white;">Delete</h2>
-						<table>
-							<tr>
-								<td style="color: white;">Product Id :</td>
-								<td><input type="number" name="productId"></td>
-							</tr>
-							<tr>
-								<td></td>
-								<td></td>
-							</tr>
-							<tr>
-								<td></td>
-								<td>
-									<button style="width: 100px;" type="submit">Delete</button>
-								</td>
-							</tr>
-						</table>
-
-					</form>
-					
-					
-					
-					
 				</div>
 			</td>
 		</tr>
 	</table>
 	<br>
 	<br>
-	<a href="login.html">Logout</a>
+	<form method="post" action="UpdateServlet">
+		<button type="submit">Update</button>
+	</form>
 
 </body>
 </html>
