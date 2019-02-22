@@ -9,7 +9,7 @@
 </head>
 <style>
 body {
-	background: url("Shopping-Background.jpg");
+	background: url("wallpaper.png");
 	text-align: center;
 	padding-top: 50px;
 }
