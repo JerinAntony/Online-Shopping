@@ -49,7 +49,7 @@ public class AddRegisterationServlet extends HttpServlet {
 		try {
 			registerdao.addCustomer(register);
 			RequestDispatcher rd = request
-					.getRequestDispatcher("login.jsp");
+					.getRequestDispatcher("login.html");
 			rd.forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
