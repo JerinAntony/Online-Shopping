@@ -73,7 +73,7 @@ form {
 								<td style="color: white;">Category :</td>
 								<td><select name="category">
 										<c:forEach var="category" items="${CATEGORY}">
-											<option value="${category.id }">${category.name }</option>
+											<option value="${category.id}">${category.name}</option>
 										</c:forEach>
 								</select></td>
 							</tr>

@@ -1,7 +1,6 @@
 package com.chainsys.onlineshopping.controller;
 
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.ArrayList;
 
 import javax.servlet.RequestDispatcher;
@@ -28,7 +27,7 @@ public class AddCategoryServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String name = request.getParameter("category");
+		String name = request.getParameter("categoryName");
 		Category category = new Category();
 		category.setName(name);
 		CategoryDAO categorydao = new CategoryDAO();
@@ -36,7 +35,7 @@ public class AddCategoryServlet extends HttpServlet {
 			ArrayList<Category> categorylist = new ArrayList<>();
 			categorydao.addCategory(category);
 			categorylist.addAll(categorydao.findAll());
-			request.setAttribute("CATEGORY", category);
+			request.setAttribute("CATEGORY", categorylist);
 			RequestDispatcher rd = request.getRequestDispatcher("home.jsp");
 			rd.forward(request, response);
 		} catch (Exception e) {
