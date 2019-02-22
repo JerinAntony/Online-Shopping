@@ -1,8 +1,6 @@
 package com.chainsys.onlineshopping.controller;
 
 import java.io.IOException;
-import java.sql.SQLException;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -27,19 +25,18 @@ public class LoginServelt extends HttpServlet {
 		Registration register = new Registration();
 		register.setPhoneNumber((phone));
 		register.setPassword(password);
+		System.out.println(register.getPhoneNumber());
+		System.out.println(register.getPassword());
 		RegistrationDAO registrationDAO = new RegistrationDAO();
-		try
-		{
-		registrationDAO.checkLogin(register);
-		RequestDispatcher req = request.getRequestDispatcher("home.jsp");
-		req.forward(request, response);
-		}
-		catch(Exception e)
-		{
+		try {
+			registrationDAO.checkLogin(register);
+			RequestDispatcher req = request.getRequestDispatcher("home.jsp");
+			req.forward(request, response);
+		} catch (Exception e) {
 			e.printStackTrace();
 			RequestDispatcher req = request.getRequestDispatcher("login.html");
 			req.forward(request, response);
-			
+
 		}
 
 	}

@@ -1,8 +1,8 @@
 package com.chainsys.onlineshopping.model;
 
+import java.sql.Timestamp;
 import java.time.LocalDate;
 
-import com.sun.jmx.snmp.Timestamp;
 
 public class Product {
 
