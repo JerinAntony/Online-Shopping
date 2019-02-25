@@ -28,13 +28,9 @@ public class UpdateProductServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-
-		int productid = 2;
+		int productid = Integer.parseInt(request.getParameter("id"));;
 		int price = Integer.parseInt(request.getParameter("price"));
 		int quantity = Integer.parseInt(request.getParameter("quantity"));
-		System.out.println(productid);
-		System.out.println(price);
-		System.out.println(quantity);
 		Product prod = new Product();
 		prod.setId(productid);
 		prod.setPrice(price);

@@ -40,7 +40,7 @@ public class DeleteProductServlet extends HttpServlet {
 			 * productdao.deleteProduct(productid[i]); }
 			 */
 			int productidt = Integer
-					.parseInt(request.getParameter("productId"));
+					.parseInt(request.getParameter("product"));
 			productdao.deleteProduct(productidt);
 			List<Product> productlist = productdao.findAll();
 			request.setAttribute("PRODUCT", productlist);
