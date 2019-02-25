@@ -83,8 +83,12 @@ form {
 						<h2 style="color: white;">Delete</h2>
 						<table>
 							<tr>
-								<td style="color: white;">Product Id :</td>
-								<td><input type="number" name="productId"></td>
+								<td style="color: white;">Product :</td>
+								<td><select name="product">
+										<c:forEach var="product" items="${PRODUCT}">
+											<option value="${product.id}">${product.product}</option>
+										</c:forEach>
+								</select></td>
 							</tr>
 							<tr>
 								<td></td>
