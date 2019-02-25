@@ -5,7 +5,9 @@ import java.sql.SQLException;
 import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -30,6 +32,7 @@ public class AddProductsServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
 		int categoryid = Integer.parseInt(request.getParameter("category"));
+		System.out.println(categoryid);
 		String productname = request.getParameter("product");
 		String description = request.getParameter("description");
 		int quantity = Integer.parseInt(request.getParameter("quantity"));
@@ -53,6 +56,11 @@ public class AddProductsServlet extends HttpServlet {
 		ProductDAO productDAO = new ProductDAO();
 		try {
 			productDAO.addProduct(product);
+			ArrayList<Product> productlist = new ArrayList<>();
+			productlist.addAll(productDAO.findAll());
+			request.setAttribute("PRODUCT", productlist);
+			RequestDispatcher rd = request.getRequestDispatcher("product.jsp");
+			rd.forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
