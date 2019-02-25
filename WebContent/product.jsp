@@ -9,8 +9,9 @@
 </head>
 <style>
 body {
+	background: url("wallpaper.png");
 	text-align: center;
-	padding-left: 230px;
+	padding-top: 50px;
 }
 
 form {
@@ -18,75 +19,54 @@ form {
 }
 </style>
 <body>
-	<table align="center">
-		<tr>
-			<td></td>
-			<td><h3>Add product</h3></td>
-			<td></td>
-		</tr>
-	</table>
-
-	<table>
-		<tr>
-			<td><form>
-					<table>
+	<div align="center">
+		<form method="post">
+			<h3 style="color: white">Products list</h3>
+			<table
+				style="font-family: times new roman; border-collapse: collapse; color: white">
+				<thead>
+					<tr>
+						<th
+							style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Category</th>
+						<th
+							style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Product</th>
+						<th
+							style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Price</th>
+						<th
+							style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Quantity</th>
+						<th
+							style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Expired
+							date</th>
+						<th
+							style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Status</th>
+						<!-- <th
+							style="border: 1px solid #dddddd; text-align: left; padding: 8px;"><button
+								type="submit">Delete</button></th> -->
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach var="product" items="${PRODUCT}">
 						<tr>
-							<td>Category</td>
-							<td><select name="category">
-									<c:forEach var="category" items="${CATEGORY}">
-										<option value="${category.id }">${category.name }</option>
-									</c:forEach>
-							</select></td>
+							<td
+								style="border: 1px solid #dddddd; text-align: left; padding: 8px;">${product.categoryId.name}</td>
+							<td
+								style="border: 1px solid #dddddd; text-align: left; padding: 8px;">${product.product}</td>
+							<td
+								style="border: 1px solid #dddddd; text-align: left; padding: 8px;">${product.price}</td>
+							<td
+								style="border: 1px solid #dddddd; text-align: left; padding: 8px;">${product.quantity}</td>
+							<td
+								style="border: 1px solid #dddddd; text-align: left; padding: 8px;">${product.expiredDate}</td>
+							<td
+								style="border: 1px solid #dddddd; text-align: left; padding: 8px;">${product.status}</td>
+							<%-- <td><input type="checkbox" name="delete"
+								value="${product.id}"></td> --%>
 						</tr>
-						<tr>
-							<td>Product :</td>
-							<td><input type="Text" name="product" ></td>
-						</tr>
-						<tr>
-							<td>Description :</td>
-							<td><input type="Text" name="description" ></td>
-						</tr>
-						<tr>
-							<td>Quantity :</td>
-							<td><input type="Text" name="quantity" ></td>
-						</tr>
-						<tr>
-							<td>Price :</td>
-							<td><input type="Text" name="price" ></td>
-						</tr>
-						<tr>
-							<td>Expiration Date :</td>
-							<td><input type="Text" name="expiration_date" required></td>
-						</tr>
-						<tr>
-							<td>&nbsp;</td>
-						</tr>
-						<tr>
-							<td></td>
-							<td><button type="submit">add product</button></td>
-						</tr>
-					</table>
-				</form></td>
-			<td style="width: 100px"></td>
-			<td><form>
-					<table>
-						<tr>
-							<td>Category :</td>
-							<td><input type="Text" name="category" required></td>
-						</tr>
-						<tr>
-							<td>&nbsp;</td>
-						</tr>
-						<tr>
-							<td></td>
-							<td><button type="submit">Add category</button></td>
-						</tr>
-
-					</table>
-				</form></td>
-		</tr>
-	</table>
-
+					</c:forEach>
+				</tbody>
+			</table>
+		</form>
+	</div>
 
 </body>
 </html>

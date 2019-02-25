@@ -24,6 +24,7 @@ public class RegistrationDAO {
 					Date.valueOf(register.getDateOfBirth()));
 			preparedstatement.setTimestamp(6, register.getCreatedDate());
 			preparedstatement.executeUpdate();
+			ConnectionUtil.close(connection, preparedstatement, null);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -40,13 +41,14 @@ public class RegistrationDAO {
 			preparedstatement.setLong(2, register.getPhoneNumber());
 			preparedstatement.setString(3, register.getPassword());
 			preparedstatement.executeUpdate();
+			ConnectionUtil.close(connection, preparedstatement, null);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
 
 	public Registration checkLogin(Registration register) {
-		Registration registration=null;
+		Registration registration = null;
 		try {
 			Connection connection = ConnectionUtil.getConnection();
 			String sql = "select phone_number,password from registeration where phone_number=? and password=?";
@@ -56,6 +58,7 @@ public class RegistrationDAO {
 			preparedstatement.setLong(1, phone);
 			preparedstatement.setString(2, register.getPassword());
 			preparedstatement.executeUpdate();
+			ConnectionUtil.close(connection, preparedstatement, null);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

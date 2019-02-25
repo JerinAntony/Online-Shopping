@@ -32,7 +32,6 @@ CREATE SEQUENCE product_id_seq
 START WITH 1
 INCREMENT BY 1;
 
-
 CREATE TABLE category
 (id NUMBER(10) CONSTRAINT pk_category_id PRIMARY KEY,
 name VARCHAR2(20) not null);
@@ -51,7 +50,12 @@ quantity NUMBER(3),
 order_no NUMBER(3),
 ordered_date date,
 registered_id INT CONSTRAINT rk_registeration_id REFERENCES registeration(id));
+
 CREATE SEQUENCE orders_order_no_seq
+START WITH 1
+INCREMENT BY 1;
+
+CREATE SEQUENCE orders_id_seq
 START WITH 1
 INCREMENT BY 1;
 
