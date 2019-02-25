@@ -20,55 +20,6 @@ form {
 </style>
 <body>
 
-	<div align="center">
-		<form method="post" action="DeleteProductServlet">
-			<h3 style="color: white">Products list</h3>
-			<table
-				style="font-family: times new roman; border-collapse: collapse; color: white">
-				<thead>
-					<tr>
-						<th
-							style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Category</th>
-						<th
-							style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Product</th>
-						<th
-							style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Price</th>
-						<th
-							style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Quantity</th>
-						<th
-							style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Expired
-							date</th>
-						<th
-							style="border: 1px solid #dddddd; text-align: left; padding: 8px;">Status</th>
-						<!-- <th
-							style="border: 1px solid #dddddd; text-align: left; padding: 8px;"><button
-								type="submit">Delete</button></th> -->
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach var="product" items="${PRODUCT}">
-						<tr>
-							<td
-								style="border: 1px solid #dddddd; text-align: left; padding: 8px;">${product.categoryId.name}</td>
-							<td
-								style="border: 1px solid #dddddd; text-align: left; padding: 8px;">${product.product}</td>
-							<td
-								style="border: 1px solid #dddddd; text-align: left; padding: 8px;">${product.price}</td>
-							<td
-								style="border: 1px solid #dddddd; text-align: left; padding: 8px;">${product.quantity}</td>
-							<td
-								style="border: 1px solid #dddddd; text-align: left; padding: 8px;">${product.expiredDate}</td>
-							<td
-								style="border: 1px solid #dddddd; text-align: left; padding: 8px;">${product.status}</td>
-							<%-- <td><input type="checkbox" name="delete"
-								value="${product.id}"></td> --%>
-						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
-		</form>
-	</div>
-
 	<table>
 		<tr align="center">
 			<td>
@@ -156,5 +107,8 @@ form {
 			</td>
 		</tr>
 	</table>
+	<form method="post" action="UpdatePlaceOrderServlet">
+		<button type="submit">Place Order</button>
+	</form>
 </body>
 </html>

@@ -19,6 +19,7 @@ public class CategoryDAO {
 					.prepareStatement(sql);
 			preparedStatement.setString(1, category.getName());
 			preparedStatement.executeUpdate();
+			ConnectionUtil.close(connection, preparedStatement, null);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -42,6 +43,7 @@ public class CategoryDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
+		
 		return categoryLists;
 	}
 
@@ -54,7 +56,7 @@ public class CategoryDAO {
 					.prepareStatement(sql);
 			preparedStatement.setInt(1, categoryid);
 			ResultSet resultset = preparedStatement.executeQuery();
-
+			category = new Category();
 			if (resultset.next()) {
 				category.setId(resultset.getInt("id"));
 				category.setName(resultset.getString("name"));

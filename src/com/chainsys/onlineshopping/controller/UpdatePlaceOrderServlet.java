@@ -14,10 +14,10 @@ import com.chainsys.onlineshopping.dao.ProductDAO;
 import com.chainsys.onlineshopping.model.Product;
 
 /**
- * Servlet implementation class UpdateServlet
+ * Servlet implementation class UpdatePlaceOrderServlet
  */
-@WebServlet("/UpdateServlet")
-public class UpdateServlet extends HttpServlet {
+@WebServlet("/UpdatePlaceOrderServlet")
+public class UpdatePlaceOrderServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	/**
@@ -26,13 +26,13 @@ public class UpdateServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request,
 			HttpServletResponse response) throws ServletException, IOException {
-		ProductDAO productDAO = new ProductDAO();
 		ArrayList<Product> productlist = new ArrayList<>();
+		ProductDAO productDAO = new ProductDAO();
 		try {
 			productlist.addAll(productDAO.findAll());
 			request.setAttribute("PRODUCT", productlist);
 			RequestDispatcher req = request
-					.getRequestDispatcher("viewupdatedelete.jsp");
+					.getRequestDispatcher("placeorder.jsp");
 			req.forward(request, response);
 		} catch (Exception e) {
 			e.printStackTrace();

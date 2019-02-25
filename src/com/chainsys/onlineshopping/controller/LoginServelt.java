@@ -14,6 +14,7 @@ import com.chainsys.onlineshopping.dao.CategoryDAO;
 import com.chainsys.onlineshopping.dao.RegistrationDAO;
 import com.chainsys.onlineshopping.model.Category;
 import com.chainsys.onlineshopping.model.Registration;
+import com.chainsys.onlineshopping.validator.LoginValidator;
 
 /**
  * Servlet implementation class LoginServelt
@@ -35,6 +36,8 @@ public class LoginServelt extends HttpServlet {
 		CategoryDAO categoryDAO = new CategoryDAO();
 		ArrayList<Category> categorylist = new ArrayList<>();
 		try {
+			LoginValidator validator = new LoginValidator();
+			validator.loginValidator(register);
 			registrationDAO.checkLogin(register);
 			categorylist.addAll(categoryDAO.findAll());
 			request.setAttribute("CATEGORY", categorylist);

@@ -149,9 +149,21 @@ form {
 	</table>
 	<br>
 	<br>
-	<form method="post" action="UpdateServlet">
-		<button type="submit">Update</button>
-	</form>
+	<table align="center">
+		<tr>
+			<td>
+				<form method="post" action="UpdateServlet">
+					<button type="submit">Product Update/Delete</button>
+				</form>
+			</td>
+			<td>
+				<form method="post" action="UpdatePlaceOrderServlet">
+					<button type="submit">Place Order</button>
+				</form>
+			</td>
+		</tr>
+	</table>
+
 
 </body>
 </html>
