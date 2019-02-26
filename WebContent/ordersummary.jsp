@@ -58,7 +58,21 @@ form {
 						</tr>
 					</c:forEach>
 				</tbody>
-			</table>
+				
+				</table>
+				<table>
+		<tbody>
+		<tr>
+					<td></td>
+					<td>
+						<button style="width: 60px;" type="submit">back</button>
+					</td>
+										<td>&nbsp;</td>
+										<td>&nbsp;</td>
+					<td><a href="login.html">Logout</a></td>
+				</tr>
+			</tbody>
+		</table>
 		</form>
 	</div>
 </body>
